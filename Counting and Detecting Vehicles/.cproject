@@ -44,6 +44,7 @@
 									<listOptionValue builtIn="false" value="opencv_flann"/>
 									<listOptionValue builtIn="false" value="opencv_gpu"/>
 									<listOptionValue builtIn="false" value="opencv_highgui"/>
+									<listOptionValue builtIn="false" value="opencv_imgproc"/>
 									<listOptionValue builtIn="false" value="opencv_legacy"/>
 									<listOptionValue builtIn="false" value="opencv_ml"/>
 									<listOptionValue builtIn="false" value="opencv_nonfree"/>
@@ -56,7 +57,7 @@
 									<listOptionValue builtIn="false" value="opencv_video"/>
 									<listOptionValue builtIn="false" value="opencv_videostab"/>
 								</option>
-								<option id="gnu.cpp.link.option.paths.447037318" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths"/>
+								<option id="gnu.cpp.link.option.paths.447037318" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1298218682" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
