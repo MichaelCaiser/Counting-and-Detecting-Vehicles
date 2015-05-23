@@ -1,12 +1,13 @@
 /*
  * Linea.hpp
  *
- * Author: Alonso Loaiza Pereira
- * e-mail: hiyitsu@gmail.com
- * University: Instituto Tecnologico de Costa Rica (TEC)
+ * @Author: Alonso Loaiza Pereira
+ * @e-mail: hiyitsu@gmail.com
+ * @University: Instituto Tecnologico de Costa Rica (TEC)
  *
- * Description: Clase encargada de almacenar la informacion de una linea ademas permite el calculo de
- * imagenes y preimagenes de dicha recta.
+ * @Description:
+ * Clase encargada de almacenar la informacion de una linea ademas permite el calculo de imagenes y
+ * preimagenes de dicha recta.
  */
 
 #ifndef LINEA_HPP_

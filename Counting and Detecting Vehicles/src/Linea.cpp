@@ -1,9 +1,9 @@
 /*
  * Linea.cpp
  *
- * Author: Alonso Loaiza Pereira
- * e-mail: hiyitsu@gmail.com
- * University: Instituto Tecnologico de Costa Rica (TEC)
+ * @Author: Alonso Loaiza Pereira
+ * @e-mail: hiyitsu@gmail.com
+ * @University: Instituto Tecnologico de Costa Rica (TEC)
  */
 
 #include "Linea.hpp"

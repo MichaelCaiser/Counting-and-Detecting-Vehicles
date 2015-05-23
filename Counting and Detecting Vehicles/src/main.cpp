@@ -84,6 +84,7 @@
 #include "BlobDetector.hpp"
 #include "ConfiguracionConexion.hpp"
 #include <vector>
+#include <ctime>
 #include <cmath>
 using namespace std;
 
@@ -102,6 +103,8 @@ void borrarElemento(vector<int>* rLista)
 
 int main()
 {
+	time_t t = time(0);
+	cout<<t<<endl;
 //	Tracker* track = new Tracker();
 //	Rect rect1(100,100,100,100);
 //	Rect rect2(210,0,90,90);
@@ -110,105 +113,107 @@ int main()
 //	cout<<"Distancia total: "<<distance<<endl;
 //	return 0;
 
-	VideoCapture* video = new VideoCapture("Data/traffic_road.mp4");
-	Filtro* filtro = new Filtro();
-	BlobDetector* blob_detector = new BlobDetector();
-	Tracker* track = new Tracker();
-	if(!video->isOpened())
-	{
-		cout<<"Error in load video"<<endl;
-		return -1;
-	}
-	while(true)
-	{
-		Mat image;
-		video->read(image);
+//	VideoCapture* video = new VideoCapture("Data/traffic_road.mp4");
+//	Filtro* filtro = new Filtro();
+//	BlobDetector* blob_detector = new BlobDetector();
+//	Tracker* track = new Tracker();
+//	if(!video->isOpened())
+//	{
+//		cout<<"Error in load video"<<endl;
+//		return -1;
+//	}
+//	while(true)
+//	{
+//		Mat image;
+//		video->read(image);
+//
+//		Rect roi(220,400,700,300);
+//		Mat img_roi ;
+//		Mat img_roi2;
+//		Mat img_roi3;
+//		img_roi = image(roi).clone();
+//		img_roi2 = image(roi).clone();
+//		img_roi3 = image(roi).clone();
+//		namedWindow("stream",WINDOW_NORMAL);
+//		namedWindow("ROI",WINDOW_NORMAL);
+//		//namedWindow("Gray Scale",WINDOW_NORMAL);
+//		//namedWindow("Blur",WINDOW_NORMAL);
+//		//namedWindow("Canny",WINDOW_NORMAL);
+//		namedWindow("Contornos",WINDOW_NORMAL);
+//		namedWindow("Contornos Filtrados",WINDOW_NORMAL);
+//		namedWindow("BLOB",WINDOW_NORMAL);
+//		namedWindow("BLOB2",WINDOW_NORMAL);
+//		namedWindow("BLOB3",WINDOW_NORMAL);
+//
+//		Mat imagen_filtrada = filtro->filtrarImagen(image);
+//		vector< vector<Point> > contornos = filtro->filtrarContornos(imagen_filtrada);
+//		vector<Rect> blob = track->detectarBloques(contornos);
+//		vector<Rect> blob3 = blob_detector->obtenerBlobsDeContornos(contornos);
+//		RNG rng(12345);
+//		for(int i = 0; i < contornos.size(); i++)
+//		{
+//			Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
+//			Rect recn = boundingRect(contornos[i]);
+//			int thickness = -1;
+//			int lineType = 8;
+//			float pos_x = recn.x + (float)recn.width/2;
+//			float pos_y = recn.y + (float)recn.height/2;
+//			circle( img_roi, Point(pos_x, pos_y), 5, color, thickness, lineType );
+//			rectangle(img_roi, recn,  color ,2, 8,0);
+//		}
+//
+//		for(int i = 0; i < blob.size(); i++)
+//		{
+//			Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
+//			Rect recn = blob[i];
+//			int thickness = -1;
+//			int lineType = 8;
+//			float pos_x = recn.x + (float)recn.width/2;
+//			float pos_y = recn.y + (float)recn.height/2;
+//			//circle( img_roi2, Point(pos_x, pos_y), 5, color, thickness, lineType );
+//			rectangle(img_roi2, recn,  color ,2, 8,0);
+//		}
+//
+//		for(int i = 0; i < blob3.size(); i++)
+//		{
+//			Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
+//			Rect recn = blob3[i];
+//			int thickness = -1;
+//			int lineType = 8;
+//			float pos_x = recn.x + (float)recn.width/2;
+//			float pos_y = recn.y + (float)recn.height/2;
+//			//circle( img_roi2, Point(pos_x, pos_y), 5, color, thickness, lineType );
+//			rectangle(img_roi3, recn,  color ,2, 8,0);
+//		}
+//
+//		//Dibuja el ROI en la imagen original
+//		//Rect roi = Rect(220,400,700,300);
+//		rectangle(image, roi,  Scalar(0,255,0),2, 8,0);
+//		int thickness = 2;
+//		int lineType = 8;
+//		imshow("BLOB", img_roi);
+//		imshow("BLOB2", img_roi2);
+//		imshow("BLOB3", img_roi3);
+//		line( image, Point(380,402),Point(220,611), Scalar( 0, 0, 255 ), thickness, lineType );
+//		line( image, Point(742,405),Point(918,648), Scalar( 0, 0, 255 ), thickness, lineType );
+//		imshow("stream", image);
+//
+//
+//		int key = waitKey(33);
+//		if(key == 27)
+//		{
+//			break;
+//		}
+//		if(key == 112)
+//		{
+//			waitKey();
+//		}
+//	}
+//
+//	video->release();
+//	return 0;
 
-		Rect roi(220,400,700,300);
-		Mat img_roi ;
-		Mat img_roi2;
-		Mat img_roi3;
-		img_roi = image(roi).clone();
-		img_roi2 = image(roi).clone();
-		img_roi3 = image(roi).clone();
-		namedWindow("stream",WINDOW_NORMAL);
-		namedWindow("ROI",WINDOW_NORMAL);
-		//namedWindow("Gray Scale",WINDOW_NORMAL);
-		//namedWindow("Blur",WINDOW_NORMAL);
-		//namedWindow("Canny",WINDOW_NORMAL);
-		namedWindow("Contornos",WINDOW_NORMAL);
-		namedWindow("Contornos Filtrados",WINDOW_NORMAL);
-		namedWindow("BLOB",WINDOW_NORMAL);
-		namedWindow("BLOB2",WINDOW_NORMAL);
-		namedWindow("BLOB3",WINDOW_NORMAL);
 
-		Mat imagen_filtrada = filtro->filtrarImagen(image);
-		vector< vector<Point> > contornos = filtro->filtrarContornos(imagen_filtrada);
-		vector<Rect> blob = track->detectarBloques(contornos);
-		vector<Rect> blob3 = blob_detector->obtenerBlobsDeContornos(contornos);
-		RNG rng(12345);
-		for(int i = 0; i < contornos.size(); i++)
-		{
-			Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
-			Rect recn = boundingRect(contornos[i]);
-			int thickness = -1;
-			int lineType = 8;
-			float pos_x = recn.x + (float)recn.width/2;
-			float pos_y = recn.y + (float)recn.height/2;
-			circle( img_roi, Point(pos_x, pos_y), 5, color, thickness, lineType );
-			rectangle(img_roi, recn,  color ,2, 8,0);
-		}
-
-		for(int i = 0; i < blob.size(); i++)
-		{
-			Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
-			Rect recn = blob[i];
-			int thickness = -1;
-			int lineType = 8;
-			float pos_x = recn.x + (float)recn.width/2;
-			float pos_y = recn.y + (float)recn.height/2;
-			//circle( img_roi2, Point(pos_x, pos_y), 5, color, thickness, lineType );
-			rectangle(img_roi2, recn,  color ,2, 8,0);
-		}
-
-		for(int i = 0; i < blob3.size(); i++)
-		{
-			Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
-			Rect recn = blob3[i];
-			int thickness = -1;
-			int lineType = 8;
-			float pos_x = recn.x + (float)recn.width/2;
-			float pos_y = recn.y + (float)recn.height/2;
-			//circle( img_roi2, Point(pos_x, pos_y), 5, color, thickness, lineType );
-			rectangle(img_roi3, recn,  color ,2, 8,0);
-		}
-
-		//Dibuja el ROI en la imagen original
-		//Rect roi = Rect(220,400,700,300);
-		rectangle(image, roi,  Scalar(0,255,0),2, 8,0);
-		int thickness = 2;
-		int lineType = 8;
-		imshow("BLOB", img_roi);
-		imshow("BLOB2", img_roi2);
-		imshow("BLOB3", img_roi3);
-		line( image, Point(380,402),Point(220,611), Scalar( 0, 0, 255 ), thickness, lineType );
-		line( image, Point(742,405),Point(918,648), Scalar( 0, 0, 255 ), thickness, lineType );
-		imshow("stream", image);
-
-
-		int key = waitKey(33);
-		if(key == 27)
-		{
-			break;
-		}
-		if(key == 112)
-		{
-			waitKey();
-		}
-	}
-
-	video->release();
-	return 0;
 
 //	FileReader* file_access = new FileReader();
 //	vector<int> lista;

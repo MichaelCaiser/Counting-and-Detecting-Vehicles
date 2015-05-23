@@ -1,11 +1,12 @@
 /*
  * Region.hpp
  *
- * Author: Alonso Loaiza Pereira
- * e-mail: hiyitsu@gmail.com
- * University: Instituto Tecnologico de Costa Rica (TEC)
+ * @Author: Alonso Loaiza Pereira
+ * @e-mail: hiyitsu@gmail.com
+ * @University: Instituto Tecnologico de Costa Rica (TEC)
  *
- * Description: Es una clase simple contenedora de informacion, dicha informacion corresponde a la de una
+ * @Description:
+ * Es una clase simple contenedora de informacion (POJO), dicha informacion corresponde a la de una
  * region, para ello almacenando atributos como lo son su posicion por medio de las coordenadas X y Y, así
  * como su altura y ancho. Implementa metodos simple de acceso a los datos por medio de getters y setters.
  */
@@ -38,10 +39,10 @@ public:
 private:
 
 	//Atributos
-	int mPosicionX;
-	int mPosicionY;
-	int mAncho;
-	int mAlto;
+	int mPosicionX;	//Posicion X inicial de la region
+	int mPosicionY;	//Posicion Y inicial de la region
+	int mAncho;		//Ancho de la region
+	int mAlto;		//Alto de la region
 };
 
 #endif /* REGION_HPP_ */
