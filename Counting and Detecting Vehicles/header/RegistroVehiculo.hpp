@@ -17,7 +17,7 @@
 using namespace std;
 
 //Constantes
-int NAME = 3;
+//int NAME = 3;
 
 #ifndef REGISTROVEHICULO_HPP_
 #define REGISTROVEHICULO_HPP_
