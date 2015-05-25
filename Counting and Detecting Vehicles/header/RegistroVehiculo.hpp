@@ -14,10 +14,10 @@
 //Bibliotecas
 #include <ctime>		//Manejo de Dates (time_t)
 #include <string>		//Manejo de Strings
-using namespace std;
 
-//Constantes
-//int NAME = 3;
+//Especificacion de Namespace
+using std::time_t;
+using std::string;
 
 #ifndef REGISTROVEHICULO_HPP_
 #define REGISTROVEHICULO_HPP_
@@ -26,6 +26,7 @@ class RegistroVehiculo
 {
 
 public:
+
 	//Constructor y Destructor
 	RegistroVehiculo();
 	RegistroVehiculo(time_t rFecha, string rPlaca, float rVelocidad, string rTipo);
@@ -50,8 +51,6 @@ private:
 	string mPlaca;				//Placa del vehiculo
 	float  mVelocidadPromedio;	//Velocidad con la que paso el vehiculo por la estructura vial
 	string mTipoVehiculo;		//Tipo de vehiculo
-
-
 };
 
 #endif /* REGISTROVEHICULO_HPP_ */

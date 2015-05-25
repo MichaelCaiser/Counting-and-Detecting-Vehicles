@@ -13,7 +13,8 @@
  *                           Constructor y Destructor                            *
  *********************************************************************************
  */
-Reporte::Reporte() {
+Reporte::Reporte()
+{
 	// Valores Default
 	mHumedad = 0;
 	mTemperatura = 0;
@@ -22,6 +23,7 @@ Reporte::Reporte() {
 
 Reporte::~Reporte() {
 	// TODO Auto-generated destructor stub
+	//Jaja
 }
 
 /*

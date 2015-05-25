@@ -15,7 +15,10 @@
 #include <ctime>				//Manejo de Dates (time_t)
 #include <vector>				//Manejo de listas
 #include "RegistroVehiculo.hpp"	//Registro de un vehiculo
-using namespace std;
+
+//Especificacion de Namespace
+using std::time_t;
+using std::vector;
 
 #ifndef REPORTE_HPP_
 #define REPORTE_HPP_
@@ -56,7 +59,7 @@ private:
 	vector<RegistroVehiculo> mRegistros;	//Lista con los registros del reporte
 
 	//Atributos Constantes
-	static const int MAX_REGISTROS = 100;	//Maximo cantidad de registros
+	static const short int MAX_REGISTROS = 100;	//Maximo cantidad de registros
 
 };
 

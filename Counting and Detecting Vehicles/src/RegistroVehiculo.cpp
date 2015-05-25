@@ -13,6 +13,7 @@
  *                           Constructor y Destructor                            *
  *********************************************************************************
  */
+
 RegistroVehiculo::RegistroVehiculo()
 {
 	// TODO Auto-generated constructor stub
