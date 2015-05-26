@@ -29,7 +29,7 @@ public:
 
 	//Constructor y Destructor
 	RegistroVehiculo();
-	RegistroVehiculo(time_t rFecha, string rPlaca, float rVelocidad, string rTipo);
+	RegistroVehiculo(string rPlaca, string rTipo, float rVelocidad, time_t rFecha);
 	virtual ~RegistroVehiculo();
 
 	//Getters
@@ -47,10 +47,10 @@ public:
 private:
 
 	//Atributos
-	time_t mFecha;				//Fecha de la detección del vehiculo
-	string mPlaca;				//Placa del vehiculo
-	float  mVelocidadPromedio;	//Velocidad con la que paso el vehiculo por la estructura vial
-	string mTipoVehiculo;		//Tipo de vehiculo
+	string* mpPlaca;				//Puntero a un string con la Placa del vehiculo
+	string* mpTipoVehiculo;			//Puntero a un string con el Tipo de vehiculo
+	float*  mpVelocidadPromedio;	//Puntero a un float con la Velocidad con la que paso el vehiculo por la estructura vial
+	time_t* mpFecha;				//Puntero a la Fecha de la detección del vehiculo
 };
 
 #endif /* REGISTROVEHICULO_HPP_ */

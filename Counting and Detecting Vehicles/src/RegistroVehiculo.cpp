@@ -8,6 +8,9 @@
 
 #include "RegistroVehiculo.hpp"
 
+//#include <iostream>
+//using namespace std;
+
 /*
  *********************************************************************************
  *                           Constructor y Destructor                            *
@@ -16,26 +19,35 @@
 
 RegistroVehiculo::RegistroVehiculo()
 {
-	// TODO Auto-generated constructor stub
-	//Datos default
-	mFecha = time(0);	//Fecha Actual
-	mPlaca = "ABC123";
-	mVelocidadPromedio = 0;
-	mTipoVehiculo = "Liviano";
+	//Inicializa las variables
+	mpPlaca = new string();
+	mpTipoVehiculo = new string();
+	mpVelocidadPromedio = new float();
+	mpFecha = new time_t();
+
+	//cout<<"creando objeto constructor 1"<<endl;
 }
 
-RegistroVehiculo::RegistroVehiculo(time_t rFecha, string rPlaca, float rVelocidad, string rTipo)
+RegistroVehiculo::RegistroVehiculo(string rPlaca, string rTipo, float rVelocidad, time_t rFecha)
 {
-	// TODO Auto-generated constructor stub
-	mFecha = rFecha;	//Fecha Actual
-	mPlaca = rPlaca;
-	mVelocidadPromedio = rVelocidad;
-	mTipoVehiculo = rTipo;
+	// Inicializa las variables y les asigna su valor
+	mpPlaca = new string(rPlaca);
+	mpTipoVehiculo = new string(rTipo);
+	mpVelocidadPromedio = new float(rVelocidad);
+	mpFecha = new time_t(rFecha);
+
+	//cout<<"creando objeto constructor 2"<<endl;
 }
 
 RegistroVehiculo::~RegistroVehiculo()
 {
-	// TODO Auto-generated destructor stub
+	// Libera la memoria
+	delete mpPlaca;
+	delete mpTipoVehiculo;
+	delete mpVelocidadPromedio;
+	delete mpFecha;
+
+	//cout<<"Destruyendo objeto"<<endl;
 }
 
 /*
@@ -43,24 +55,25 @@ RegistroVehiculo::~RegistroVehiculo()
  *                                 Getters                                       *
  *********************************************************************************
  */
-time_t RegistroVehiculo::getFecha()
-{
-	return mFecha;
-}
 
 string RegistroVehiculo::getPlaca()
 {
-	return mPlaca;
-}
-
-float  RegistroVehiculo::getVelocidadPromedio()
-{
-	return mVelocidadPromedio;
+	return *mpPlaca;
 }
 
 string RegistroVehiculo::getTipoVehiculo()
 {
-	return mTipoVehiculo;
+	return *mpTipoVehiculo;
+}
+
+float  RegistroVehiculo::getVelocidadPromedio()
+{
+	return *mpVelocidadPromedio;
+}
+
+time_t RegistroVehiculo::getFecha()
+{
+	return *mpFecha;
 }
 
 /*
@@ -68,24 +81,30 @@ string RegistroVehiculo::getTipoVehiculo()
  *                                 Setters                                       *
  *********************************************************************************
  */
-void RegistroVehiculo::setFecha(time_t rFecha)
-{
-	mFecha = rFecha;
-}
 
 void RegistroVehiculo::setPlaca(string rPlaca)
 {
-	mPlaca = rPlaca;
-}
-
-void RegistroVehiculo::setVelocidadPromedio(float rVelocidad)
-{
-	mVelocidadPromedio = rVelocidad;
+	*mpPlaca = rPlaca;
 }
 
 void RegistroVehiculo::setTipoVehiculo(string rTipo)
 {
-	mTipoVehiculo = rTipo;
+	*mpTipoVehiculo = rTipo;
 }
+
+void RegistroVehiculo::setVelocidadPromedio(float rVelocidad)
+{
+	*mpVelocidadPromedio = rVelocidad;
+}
+
+void RegistroVehiculo::setFecha(time_t rFecha)
+{
+	*mpFecha = rFecha;
+}
+
+
+
+
+
 
 
