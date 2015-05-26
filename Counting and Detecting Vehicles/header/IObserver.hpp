@@ -6,10 +6,9 @@
  * @University: Instituto Tecnologico de Costa Rica (TEC)
  *
  * @Description:
- * Clase abstracta es decir no puede ser inicializada, la cual funciona como una interfaz (como en Java)
- * la cual declara un metodo virtual notificarReporte el cual debe ser sobreescrito en la clase que herede
- * de esta clase. Cabe destacar que esta clase corresponde a una implementacion del patron de diseño
- * Observer and Observable.
+ * Clase abstracta es decir no puede ser inicializada, la cual funciona como una interfaz (Como en Java)
+ * que declara un metodo virtual notificarReporte, el cual debe ser sobreescrito en la clase que herede
+ * de esta. Esta clase es una implementacion del patron de diseño Observer and Observable.
  */
 
 #ifndef IOBSERVER_HPP_
