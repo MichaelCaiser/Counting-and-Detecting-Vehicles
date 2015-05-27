@@ -12,8 +12,6 @@
 
 //Bibliotecas
 #include <string>	//Manejo de string
-
-//Especificacion de Namespace
 using std::string;
 
 #ifndef CONSTANTESJSON_HPP_
