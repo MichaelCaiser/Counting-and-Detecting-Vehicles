@@ -26,6 +26,7 @@ public:
 
 	//Constructor y Destructor
 	SecurityToken();
+	SecurityToken(string rUsername, string rPassword);
 	virtual ~SecurityToken();
 
 	//Getters

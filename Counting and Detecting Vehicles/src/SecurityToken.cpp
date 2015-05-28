@@ -8,7 +8,6 @@
 
 #include "SecurityToken.hpp"
 
-
 /*
  *********************************************************************************
  *                           Constructor y Destructor                            *
@@ -17,6 +16,12 @@
 SecurityToken::SecurityToken()
 {
 	// TODO Auto-generated constructor stub
+}
+
+SecurityToken::SecurityToken(string rUsername, string rPassword)
+{
+	mUsername = rUsername;
+	mPassword = rPassword;
 }
 
 SecurityToken::~SecurityToken()
