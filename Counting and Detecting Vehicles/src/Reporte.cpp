@@ -15,15 +15,30 @@
  */
 Reporte::Reporte()
 {
-	// Valores Default
-	mHumedad = 0;
-	mTemperatura = 0;
-	mLuminosidad = 0;
+	// Inicializa los punteros
+	mpCodigoDispositivo = new string();
+	mpFechaInicioReporte = new time_t();
+	mpFechaFinalReporte = new time_t();
+	mpHumedad = new float();
+	mpTemperatura = new float();
+	mpLuminosidad = new float();
+	mpCredenciales = new SecurityToken();
+	mpRegistros = new vector<RegistroVehiculo*>();
 }
 
-Reporte::~Reporte() {
-	// TODO Auto-generated destructor stub
-	//Jaja
+Reporte::~Reporte()
+{
+	limpiarRegistros();	//Vacia la lista de registros eliminado cada uno de ellos
+
+	//Libera la memoria
+	delete mpCodigoDispositivo;
+	delete mpFechaInicioReporte;
+	delete mpFechaFinalReporte;
+	delete mpHumedad;
+	delete mpTemperatura;
+	delete mpLuminosidad;
+	delete mpCredenciales;
+	delete mpRegistros;
 }
 
 /*
@@ -32,28 +47,36 @@ Reporte::~Reporte() {
  *********************************************************************************
  */
 
+string Reporte::getCodigoDispositivo() {
+	return *mpCodigoDispositivo;
+}
+
 time_t Reporte::getFechaInicioReporte() {
-	return mFechaInicioReporte;
+	return *mpFechaInicioReporte;
 }
 
 time_t Reporte::getFechaFinalReporte() {
-	return mFechaFinalReporte;
+	return *mpFechaFinalReporte;
 }
 
 float  Reporte::getHumedad() {
-	return mHumedad;
+	return *mpHumedad;
 }
 
 float  Reporte::getTemperatura() {
-	return mTemperatura;
+	return *mpTemperatura;
 }
 
 float  Reporte::getLuminosidad() {
-	return mLuminosidad;
+	return *mpLuminosidad;
 }
 
-vector<RegistroVehiculo> Reporte::getRegistros() {
-	return mRegistros;
+SecurityToken Reporte::getSecurityToken() {
+	return *mpCredenciales;
+}
+
+vector<RegistroVehiculo*> Reporte::getRegistros() {
+	return *mpRegistros;
 }
 
 /*
@@ -62,24 +85,32 @@ vector<RegistroVehiculo> Reporte::getRegistros() {
  *********************************************************************************
  */
 
+void Reporte::setCodigoDispositivo(string rCodigo) {
+	*mpCodigoDispositivo = rCodigo;
+}
+
 void Reporte::setFechaInicioReporte(time_t rFechaInicio) {
-	mFechaInicioReporte = rFechaInicio;
+	*mpFechaInicioReporte = rFechaInicio;
 }
 
 void Reporte::setFechaFinalReporte(time_t rFechaFinal) {
-	mFechaFinalReporte = rFechaFinal;
+	*mpFechaFinalReporte = rFechaFinal;
 }
 
 void Reporte::setHumedad(float rHumedad) {
-	mHumedad = rHumedad;
+	*mpHumedad = rHumedad;
 }
 
 void Reporte::setTemperatura(float rTemperatura) {
-	mTemperatura = rTemperatura;
+	*mpTemperatura = rTemperatura;
 }
 
 void Reporte::setLuminosidad(float rLuminosidad) {
-	mLuminosidad = rLuminosidad;
+	*mpLuminosidad = rLuminosidad;
+}
+
+void Reporte::setSecurityToken(SecurityToken rToken) {
+	*mpCredenciales = rToken;
 }
 
 /*
@@ -91,21 +122,21 @@ void Reporte::setLuminosidad(float rLuminosidad) {
 /*
  * @name agregarRegistro
  * @param
- * - rRegistro : RegistroVehiculo (Registro a ser agregado al reporte)
+ * - rpRegistro : RegistroVehiculo (Puntero de un registro que se desea anadir al reporte)
  * @return
- * - bool (indicando si el registro fue agregado al reporte)
+ * - bool (indicando si el puntero del registro fue agregado al reporte)
  * @Descrition
- * 		Metodo encargado de agregar un registro de un vehiculo al reporte, para ello verifica
- * 		que la cantidad de registros del reporte no sea superior a la establecida como maxima (100)
- * 		y agrega el registro y retorna un valor de verdad. En caso contrario retorna un valor de
- * 		falso.
+ * 		Metodo encargado de agregar un puntero de un registro de un vehiculo al reporte, para ello
+ * 		verifica que la cantidad de punteros a registros del reporte no sea superior a la establecida
+ * 		como maxima (100), para posteriormente agregar el registro y retornar un valor de verdad.
+ * 		En caso contrario retorna un valor de falso.
  */
 
-bool Reporte::agregarRegistro(RegistroVehiculo rRegistro)
+bool Reporte::agregarRegistro(RegistroVehiculo* rpRegistro)
 {
-	if(mRegistros.size() != MAX_REGISTROS)
+	if(mpRegistros->size() != MAX_REGISTROS)
 	{
-		mRegistros.push_back(rRegistro);
+		mpRegistros->push_back(rpRegistro);
 		return true;
 	}
 	return false;
@@ -116,9 +147,15 @@ bool Reporte::agregarRegistro(RegistroVehiculo rRegistro)
  * @param
  * @return
  * @Descrition
- * 		Metodo encargo de limpiar la lista de registros del reporte.
+ * Metodo encargo de limpiar la lista de registros del reporte. Eliminado cada uno de los objetos
+ * que contiene la lista.
  */
 void Reporte::limpiarRegistros()
 {
-	mRegistros.clear();	//Vacia la lista de registros
+	for(unsigned int indice = 0; indice < mpRegistros->size(); indice++)
+	{
+		RegistroVehiculo* puntero_registro = (*mpRegistros)[indice];
+		delete puntero_registro;
+	}
+	mpRegistros->clear();	//Libera la lista
 }
