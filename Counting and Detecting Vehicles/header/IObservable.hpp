@@ -6,10 +6,10 @@
  * @University: Instituto Tecnologico de Costa Rica (TEC)
  *
  * @Descrition
- * Clase que se encarga de notificar un reporte a todos sus observadores (IObserver),
- * los cuales se agregan a un vector de observadores (mpListaObservadores). Dichos
- * observadores tambien pueden ser eliminados si asi se desea.
- * Esta clase corresponde a la implementacion del patron de diseño observer y observable.
+ * Clase que se encarga de notificar un registro de vehiculo a todos sus observadores (IObserver),
+ * los cuales se agregan a un vector de observadores (mpListaObservadores). Dichos observadores
+ * tambien pueden ser eliminados si asi se desea. Esta clase corresponde a la implementacion del
+ * patron de diseño observer y observable.
  *
  * Explicacion del patron: http://en.wikipedia.org/wiki/Observer_pattern
  */
@@ -18,9 +18,9 @@
 #define IOBSERVABLE_HPP_
 
 //Bibliotecas
-#include <vector>			//Manejo de Listas
-#include "IObserver.hpp"	//Clase Abstracta IObserver
-#include "Reporte.hpp"		//Clase Reporte
+#include <vector>				//Manejo de Listas
+#include "IObserver.hpp"		//Clase Abstracta IObserver
+#include "RegistroVehiculo.hpp"	//Clase RegistroVehiculo
 
 //Especificacion de clases por namespace
 using std::vector;
@@ -36,9 +36,12 @@ public:
 	//Metodos
 	void agregarObservador(IObserver* rpObserver);
 	void eliminarObservador(IObserver* rpObserver);
-	void notificar(Reporte* rpReporte);
+	void eliminarObservadores();
+	void notificar(RegistroVehiculo* rpRegistro);
 
 private:
+
+	//Atributos
 	vector<IObserver*>* mpListaObservadores;
 
 };

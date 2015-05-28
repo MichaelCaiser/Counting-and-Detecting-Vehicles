@@ -57,7 +57,7 @@ void IObservable::agregarObservador(IObserver* rpObserver)
  */
 void IObservable::eliminarObservador(IObserver* rpObserver)
 {
-	for(int indice = 0; indice < mpListaObservadores->size(); indice++)
+	for(unsigned int indice = 0; indice < mpListaObservadores->size(); indice++)
 	{
 		IObserver* observer = (*mpListaObservadores)[indice];
 		if(observer == rpObserver)		//Compara si son el mismo puntero
@@ -69,24 +69,37 @@ void IObservable::eliminarObservador(IObserver* rpObserver)
 }
 
 /*
+ * @name eliminarObservadores
+ * @param
+ * @return
+ * - void
+ * @Descrition
+ * Este metodo elimina todos los observadores de la lista de observadores.
+ */
+void IObservable::eliminarObservadores()
+{
+	mpListaObservadores->clear();	//Limpia la lista
+}
+
+/*
  * @name notificar
  * @param
  * - rpObserver : IObserver* (Puntero a un objeto IObserver)
  * @return
  * - void
  * @Descrition
- * Este metodo se encarga de notificar a todos los observadores de la clase el reporte
- * el cual es enviado como puntero por medio de una llamada a la funcion procesarReporte.
- * Este metodo verifica que el puntero al observador no sea nulo.
+ * Este metodo se encarga de notificar a todos los observadores de la clase el registro de un vehiculo
+ * el cual es enviado como puntero por medio de una llamada a la funcion procesarRegistro. Este metodo
+ * verifica que el puntero al observador no sea nulo.
  */
-void IObservable::notificar(Reporte* rpReporte)
+void IObservable::notificar(RegistroVehiculo* rpRegistro)
 {
-	for(int indice = 0; indice < mpListaObservadores->size(); indice++)
+	for(unsigned int indice = 0; indice < mpListaObservadores->size(); indice++)
 	{
 		IObserver* observer = (*mpListaObservadores)[indice];
 		if(observer != 0)		//Verifica que el puntero no sea nulo
 		{
-			observer->procesarReporte(rpReporte);
+			observer->procesarRegistro(rpRegistro);
 		}
 	}
 }
