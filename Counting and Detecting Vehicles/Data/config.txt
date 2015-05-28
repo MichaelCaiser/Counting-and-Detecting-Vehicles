@@ -6,7 +6,23 @@
 ROI=400,700,600,200
 
 # Linea Derecha limite de figuras a analizar
-RL=40,70,100,100
+RL=40,70,120,100
 
 # Linea izquierda limite de figuras a analizar
-LL=40,70,100,100
+LL=50,70,130,100
+
+#############################################
+#            Datos de Seguridad             #
+#############################################
+
+# Striken Code (Credenciales de seguridad)
+TOKEN=juan,1234dF
+
+# Codigo del sistema embebido
+CODE=ABC123
+
+#############################################
+#        Configuracion de conexion          #
+#############################################
+
+

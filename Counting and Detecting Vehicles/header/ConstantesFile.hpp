@@ -28,11 +28,14 @@ const string FILE_NAME = "Data/config.txt";	//Nombre del archivo donde se recole
 const string SEPARATOR_NORMAL = "=";		//Separador normal de informacion por linea en un archivo de texto
 const string SEPARATOR_SPECIAL = ",";		//Separador especial de informacion por linea en un archivo de texto
 const char COMMENT = '#';					//Caracter indicador que la linea es un comentario
-const string ID_ROI = "ROI";				//Identificador de Region de Interes
+const string ID_ROI = "ROI";				//Identificador de la Region de Interes
 const string ID_RIGH_LINE = "RL";			//Identificador de la Linea Derecha
 const string ID_LEFT_LINE = "LL";			//Identificador de la Linea Izquierda
+const string ID_SECURITY_TOKEN = "TOKEN";	//Identificador del SecurityToken
+const string ID_EMBEDDED_CODE = "CODE";		//Identificador del Codigo del Dispostivo
 const string ID_PORT = "PORT";				//Identificador del puerto de la conexion al WebService
-const string ID_IP = "IP";					//Identificador del host correspondiente al WebService
+const string ID_HOST = "HOST";				//Identificador del host correspondiente al WebService
+const string ID_URL_POST = "POST-URL";		//Identificador del URL del webservice para el post de reportes
 
 /*
  *	Estructura de la informacion de Region de Interes
@@ -60,5 +63,14 @@ const int POS_X1_LL = 0;					//Ubicacion de la posicion X1 de la linea derecha e
 const int POS_Y1_LL = 1;					//Ubicacion de la posicion Y1 de la linea derecha en el archivo
 const int POS_X2_LL = 2;					//Ubicacion de la posicion X2 de la linea derecha en el archivo
 const int POS_Y2_LL = 3;					//Ubicacion de la posicion Y2 de la linea derecha en el archivo
+
+/*
+ *	Estructura de la informacion del Security Token
+ */
+const int SIZE_TOKEN = 2;					//Tamano de la cantidad de argumentos de la informacion del security Token
+const int POS_USER_TOKEN = 0;				//Ubicacion del username del security token en el archivo
+const int POS_PASS_TOKEN = 1;				//Ubicacion del password del security token en el archivo
+
+
 
 #endif /* CONSTANTESFILE_HPP_ */
