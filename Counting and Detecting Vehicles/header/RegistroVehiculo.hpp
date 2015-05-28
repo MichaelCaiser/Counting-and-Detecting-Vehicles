@@ -11,6 +11,9 @@
  * placa.
  */
 
+#ifndef REGISTROVEHICULO_HPP_
+#define REGISTROVEHICULO_HPP_
+
 //Bibliotecas
 #include <ctime>		//Manejo de Dates (time_t)
 #include <string>		//Manejo de Strings
@@ -19,12 +22,8 @@
 using std::time_t;
 using std::string;
 
-#ifndef REGISTROVEHICULO_HPP_
-#define REGISTROVEHICULO_HPP_
-
 class RegistroVehiculo
 {
-
 public:
 
 	//Constructor y Destructor
