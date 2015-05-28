@@ -11,22 +11,23 @@
  * del reporte y fecha final, humedad, temperatura y luminosidad.
  */
 
+#ifndef JSONBUILDER_HPP_
+#define JSONBUILDER_HPP_
+
 //Bibliotecas
 #include <string>				//Manejo de string
 #include <ctime>				//Manejo de Dates (time_t)
 #include <vector>				//Manejo de listas
-#include <sstream>				//Conversion de valores numericos (float e int)
-#include "Reporte.hpp"			//Reporte
-#include "RegistroVehiculo.hpp"	//Registro de Vehiculo
+#include <sstream>				//Conversion de valores numericos (float e int) string
+#include "Reporte.hpp"			//Clase Reporte
+#include "RegistroVehiculo.hpp"	//Clase Registro de Vehiculo
+#include "SecurityToken.hpp"	//Clase SecurityToken
 
 //Especificacion de Namespace
 using std::string;
 using std::ostringstream;
 using std::time_t;
 using std::vector;
-
-#ifndef JSONBUILDER_HPP_
-#define JSONBUILDER_HPP_
 
 class JsonBuilder
 {
@@ -39,6 +40,7 @@ public:
 	//Metodos
 	string convertToJSON(Reporte rReporte);
 	string convertToJSON(RegistroVehiculo rRegistro);
+	string convertToJSON(SecurityToken rToken);
 
 private:
 
@@ -46,7 +48,7 @@ private:
 	ostringstream* mStringBuffer;	//String Buffer para conversion de valores numericos
 
 	//Metodos
-	string convertArray(vector<RegistroVehiculo> rRegistros);
+	string convertArray(vector<RegistroVehiculo*> rRegistros);
 	string convertDate(time_t rFecha);
 	string convertFloat(float rValor);
 	string convertInt(int rValor);
