@@ -246,7 +246,7 @@ string JsonBuilder::convertArray(vector<RegistroVehiculo*> rRegistros)
 
 	json_object_array += LISTA_INI;								//Agrega el indicador de lista inicial [
 
-	for(int indice=0; indice < rRegistros.size(); indice++)
+	for(unsigned int indice=0; indice < rRegistros.size(); indice++)
 	{
 		RegistroVehiculo* registro = rRegistros[indice];
 		string json_registro_object = convertToJSON(*registro);	//Convierte el registro a un objeto JSON
