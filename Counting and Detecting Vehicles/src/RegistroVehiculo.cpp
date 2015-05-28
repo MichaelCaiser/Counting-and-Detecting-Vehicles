@@ -8,8 +8,8 @@
 
 #include "RegistroVehiculo.hpp"
 
-//#include <iostream>
-//using namespace std;
+#include <iostream>
+using namespace std;
 
 /*
  *********************************************************************************
@@ -25,7 +25,7 @@ RegistroVehiculo::RegistroVehiculo()
 	mpVelocidadPromedio = new float();
 	mpFecha = new time_t();
 
-	//cout<<"creando objeto constructor 1"<<endl;
+	cout<<"creando objeto constructor 1"<<endl;
 }
 
 RegistroVehiculo::RegistroVehiculo(string rPlaca, string rTipo, float rVelocidad, time_t rFecha)
@@ -36,7 +36,7 @@ RegistroVehiculo::RegistroVehiculo(string rPlaca, string rTipo, float rVelocidad
 	mpVelocidadPromedio = new float(rVelocidad);
 	mpFecha = new time_t(rFecha);
 
-	//cout<<"creando objeto constructor 2"<<endl;
+	cout<<"creando objeto constructor 2"<<endl;
 }
 
 RegistroVehiculo::~RegistroVehiculo()
@@ -47,7 +47,7 @@ RegistroVehiculo::~RegistroVehiculo()
 	delete mpVelocidadPromedio;
 	delete mpFecha;
 
-	//cout<<"Destruyendo objeto"<<endl;
+	cout<<"Destruyendo objeto"<<endl;
 }
 
 /*
