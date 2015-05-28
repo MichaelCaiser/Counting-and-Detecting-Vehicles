@@ -24,5 +24,8 @@ CODE=ABC123
 #############################################
 #        Configuracion de conexion          #
 #############################################
+PORT=8080
+HOST=localhost
+POST-URL=http//localhost:8080/WebAppCar/service/rest/embedded/addReport
 
 
