@@ -8,37 +8,30 @@
 
 #include "RegistroVehiculo.hpp"
 
+
 /*
  *********************************************************************************
  *                           Constructor y Destructor                            *
  *********************************************************************************
  */
 
-RegistroVehiculo::RegistroVehiculo()
-{
-	//Inicializa las variables
-	mpPlaca = new string();
-	mpTipoVehiculo = new string();
-	mpVelocidadPromedio = new float();
-	mpFecha = new time_t();
+RegistroVehiculo::RegistroVehiculo() {
+	// Constructor
+	mVelocidadPromedio = 0.0f;
+	mFecha = time(0);
 }
 
 RegistroVehiculo::RegistroVehiculo(string rPlaca, string rTipo, float rVelocidad, time_t rFecha)
 {
-	// Inicializa las variables y les asigna su valor
-	mpPlaca = new string(rPlaca);
-	mpTipoVehiculo = new string(rTipo);
-	mpVelocidadPromedio = new float(rVelocidad);
-	mpFecha = new time_t(rFecha);
+	// Asigna valor a los atributos
+	mPlaca = rPlaca;
+	mTipoVehiculo = rTipo;
+	mVelocidadPromedio = rVelocidad;
+	mFecha = rFecha;
 }
 
-RegistroVehiculo::~RegistroVehiculo()
-{
-	// Libera la memoria
-	delete mpPlaca;
-	delete mpTipoVehiculo;
-	delete mpVelocidadPromedio;
-	delete mpFecha;
+RegistroVehiculo::~RegistroVehiculo() {
+	// Destructor
 }
 
 /*
@@ -49,22 +42,22 @@ RegistroVehiculo::~RegistroVehiculo()
 
 string RegistroVehiculo::getPlaca()
 {
-	return *mpPlaca;
+	return mPlaca;
 }
 
 string RegistroVehiculo::getTipoVehiculo()
 {
-	return *mpTipoVehiculo;
+	return mTipoVehiculo;
 }
 
 float  RegistroVehiculo::getVelocidadPromedio()
 {
-	return *mpVelocidadPromedio;
+	return mVelocidadPromedio;
 }
 
 time_t RegistroVehiculo::getFecha()
 {
-	return *mpFecha;
+	return mFecha;
 }
 
 /*
@@ -75,22 +68,22 @@ time_t RegistroVehiculo::getFecha()
 
 void RegistroVehiculo::setPlaca(string rPlaca)
 {
-	*mpPlaca = rPlaca;
+	mPlaca = rPlaca;
 }
 
 void RegistroVehiculo::setTipoVehiculo(string rTipo)
 {
-	*mpTipoVehiculo = rTipo;
+	mTipoVehiculo = rTipo;
 }
 
 void RegistroVehiculo::setVelocidadPromedio(float rVelocidad)
 {
-	*mpVelocidadPromedio = rVelocidad;
+	mVelocidadPromedio = rVelocidad;
 }
 
 void RegistroVehiculo::setFecha(time_t rFecha)
 {
-	*mpFecha = rFecha;
+	mFecha = rFecha;
 }
 
 

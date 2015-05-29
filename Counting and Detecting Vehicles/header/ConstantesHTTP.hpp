@@ -32,6 +32,10 @@ const string HTTP_VERSION_1_1 = "HTTP/1.1";
 const string HTTP_HOST = "Host: ";
 const string HTTP_HOST_PORT_SEPARATOR = ":";
 
+//HTTP Formato
+const string HTTP_SPACE = " ";
+const string HTTP_NEW_LINE = "\r\n";
+
 //HTTP Content
 const string HTTP_CONTENT_TYPE_JSON = "Content-Type: application/json;";
 const string HTTP_CONTENT_LENGTH = "Content-Length: ";

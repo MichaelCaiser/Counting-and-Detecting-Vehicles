@@ -42,7 +42,7 @@ public:
 	float  getTemperatura();
 	float  getLuminosidad();
 	SecurityToken getSecurityToken();
-	vector<RegistroVehiculo*> getRegistros();
+	vector<RegistroVehiculo> getRegistros();
 
 	//Setters
 	void setCodigoDispositivo(string rCodigo);
@@ -54,25 +54,23 @@ public:
 	void setSecurityToken(SecurityToken rToken);
 
 	//Metodos
-	bool agregarRegistro(RegistroVehiculo* rpRegistro);
+	bool agregarRegistro(RegistroVehiculo rRegistro);
+	void limpiarRegistros();
 
 private:
 
 	//Atributos
-	string* mpCodigoDispositivo;			//Codigo identificador del dispositivo que emite el reporte
-	time_t* mpFechaInicioReporte;			//Fecha cuando se empieza a generar el reporte
-	time_t* mpFechaFinalReporte;			//Fecha cuando se termina de generar el reporte
-	float*  mpHumedad;						//Humedad promedio a la que se genero el reporte
-	float*  mpTemperatura;					//Temperatura promedio a la que se genero el reporte
-	float*  mpLuminosidad;					//Luminosidad promedio con la que se genero el reporte
-	SecurityToken* mpCredenciales;			//Token de seguridad del reporte
-	vector<RegistroVehiculo*>* mpRegistros;	//Lista con los registros del reporte
+	string mCodigoDispositivo;			//Codigo identificador del dispositivo que emite el reporte
+	time_t mFechaInicioReporte;			//Fecha cuando se empieza a generar el reporte
+	time_t mFechaFinalReporte;			//Fecha cuando se termina de generar el reporte
+	float  mHumedad;						//Humedad promedio a la que se genero el reporte
+	float  mTemperatura;					//Temperatura promedio a la que se genero el reporte
+	float  mLuminosidad;					//Luminosidad promedio con la que se genero el reporte
+	SecurityToken mCredenciales;			//Token de seguridad del reporte
+	vector<RegistroVehiculo> mRegistros;	//Lista con los registros del reporte
 
 	//Atributos Constantes
 	static const short int MAX_REGISTROS = 100;	//Maximo cantidad de registros
-
-	//Metodos
-	void limpiarRegistros();
 
 };
 

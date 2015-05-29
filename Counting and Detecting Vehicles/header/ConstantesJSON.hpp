@@ -42,7 +42,7 @@ const string REPORTE_FECHA_FINAL  = "\"FechaFinal\"";	//Identificador del atribu
 const string REPORTE_HUMEDAD = "\"Humedad\"";			//Identificador del atributo Humedad en JSON
 const string REPORTE_TEMPERATURA = "\"Temperatura\"";	//Identificador del atributo Temperatura en JSON
 const string REPORTE_LUMINOSIDAD = "\"Luminosidad\"";	//Identificador del atributo Luminosidad en JSON
-const string REPORTE_SECURITYTOKEN = "Token";			//Identificador del atributo SecurityToken en JSON
+const string REPORTE_SECURITYTOKEN = "\"Token\"";			//Identificador del atributo SecurityToken en JSON
 const string REPORTE_REGISTROS = "\"Registros\"";		//Identificador del atributo Registros en JSON
 
 //Constantes de clase RegistroVehiculo

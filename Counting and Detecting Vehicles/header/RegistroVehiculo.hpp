@@ -46,10 +46,10 @@ public:
 private:
 
 	//Atributos
-	string* mpPlaca;				//Puntero a un string con la Placa del vehiculo
-	string* mpTipoVehiculo;			//Puntero a un string con el Tipo de vehiculo
-	float*  mpVelocidadPromedio;	//Puntero a un float con la Velocidad con la que paso el vehiculo por la estructura vial
-	time_t* mpFecha;				//Puntero a la Fecha de la detección del vehiculo
+	string mPlaca;				//String con la Placa del vehiculo
+	string mTipoVehiculo;		//String con el Tipo de vehiculo
+	float  mVelocidadPromedio;	//Velocidad con la que paso el vehiculo por la estructura vial
+	time_t mFecha;				//Fecha de la detección del vehiculo
 };
 
 #endif /* REGISTROVEHICULO_HPP_ */

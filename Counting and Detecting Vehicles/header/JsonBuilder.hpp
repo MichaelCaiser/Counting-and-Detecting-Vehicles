@@ -48,7 +48,7 @@ private:
 	ostringstream* mStringBuffer;	//String Buffer para conversion de valores numericos
 
 	//Metodos
-	string convertArray(vector<RegistroVehiculo*> rRegistros);
+	string convertArray(vector<RegistroVehiculo> rRegistros);
 	string convertDate(time_t rFecha);
 	string convertFloat(float rValor);
 	string convertInt(int rValor);

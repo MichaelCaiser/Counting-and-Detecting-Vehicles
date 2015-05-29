@@ -237,7 +237,7 @@ string JsonBuilder::convertDate(time_t rFecha)
  * Metodo encargado de convertir una lista de objetos RegistroVehiculo en un objeto con formato JSON
  * que represente a dicha lista.
  */
-string JsonBuilder::convertArray(vector<RegistroVehiculo*> rRegistros)
+string JsonBuilder::convertArray(vector<RegistroVehiculo> rRegistros)
 {
 	string json_object_array;	//String que representa la lista en formato JSON
 
@@ -248,8 +248,8 @@ string JsonBuilder::convertArray(vector<RegistroVehiculo*> rRegistros)
 
 	for(unsigned int indice=0; indice < rRegistros.size(); indice++)
 	{
-		RegistroVehiculo* registro = rRegistros[indice];
-		string json_registro_object = convertToJSON(*registro);	//Convierte el registro a un objeto JSON
+		RegistroVehiculo registro = rRegistros[indice];
+		string json_registro_object = convertToJSON(registro);	//Convierte el registro a un objeto JSON
 		json_object_array += json_registro_object;				//Agrega el objeto JSON al string
 		if(indice+1 != rRegistros.size())						//verifica que no sea el ultimo elemento
 		{
