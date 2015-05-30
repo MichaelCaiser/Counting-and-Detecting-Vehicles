@@ -55,4 +55,7 @@ const string REGISTRO_TIPO      = "\"TipoVehiculo\"";		//Identificador del atrib
 const string TOKEN_USERNAME = "\"Username\"";	//Identificador del atributo Username en JSON
 const string TOKEN_PASSWORD = "\"Password\"";	//Identificador del atributo Password en JSON
 
+//DATETimE FORMAT
+const string DATE_FORMAT_JSON = "\"%Y-%m-%dT%T-0600\"";
+
 #endif /* CONSTANTESJSON_HPP_ */

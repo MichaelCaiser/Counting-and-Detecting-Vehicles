@@ -217,8 +217,10 @@ string JsonBuilder::convertString(string rPalabra)
  */
 string JsonBuilder::convertDate(time_t rFecha)
 {
+	char buffer[30];
+	strftime(buffer,30,DATE_FORMAT_JSON.c_str(),localtime(&rFecha));	//Convierte la fecha al formato JSON para date (year-month-dayThour:minutes:seconds-TIMEZONE
 
-	*mStringBuffer<<rFecha;					//Almacena el entero en el buffer
+	*mStringBuffer<<buffer;					//Almacena el entero en el buffer
 	string result = mStringBuffer->str();	//Convierte el buffer en string
 
 	mStringBuffer->str("");					//Limpia el buffer
