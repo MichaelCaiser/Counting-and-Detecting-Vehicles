@@ -74,6 +74,7 @@ void WebServiceConnection::save(Reporte rReporte)
 		int port = mpConnectionConfig->getPort();
 		string url_post = mpConnectionConfig->getUrlPostReport();
 		string report_json = mpJsonBuilder->convertToJSON(rReporte);											//Crea el objeto JSON del reporte
+		cout<<report_json<<endl;
 		string http_request = mpRequestBuilder->createHttpPostReportRequest(host,port,url_post,report_json);	//Crea la solicitud HTTP para el webservice
 
 		if(!mpSocket->send(http_request))					//Verifica si no se envio el mensaje
