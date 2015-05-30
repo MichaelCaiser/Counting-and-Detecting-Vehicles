@@ -43,8 +43,10 @@ public:
 
 
 	void set_non_blocking ( const bool );
-
 	bool is_valid() const { return m_sock != -1; }
+
+	//Close socket
+	void closeSocket();
 
 private:
 
