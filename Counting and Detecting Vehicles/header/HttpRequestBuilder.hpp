@@ -7,7 +7,8 @@
  *
  * @Description:
  * Clase encargada de generar un strings cuyo formato sea el de solicitudes HTTP en su
- * version 1.1
+ * version 1.1. Ademas verifica que el formato de una respuesta HTTP para determinar si
+ * el tipo es HTTP OK.
  */
 
 #ifndef HTTPREQUESTBUILDER_HPP_
@@ -31,6 +32,7 @@ public:
 
 	//Metodos
 	string createHttpPostReportRequest(string rHost, int rPort, string rUrl, string rBody);
+	bool   isHttpResponseOK(string rHttpResponse);
 
 private:
 

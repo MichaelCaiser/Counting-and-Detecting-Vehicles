@@ -86,6 +86,32 @@ string HttpRequestBuilder::createHttpPostReportRequest(string rHost, int rPort, 
 }
 
 /*
+ * @name isHttpResponseOK
+ * @param
+ * - rHttpResponse : string (Response HTTP en string)
+ * @return
+ * - bool (El cual indica si es un HTTP response del tipo OK)
+ * @Descrition
+ * Metodo encargado de determinar si una respuesta en el formato HTTP es del tipo OK, en ese
+ * caso se retorna un valor de verdad en caso constrario se retorna un valor de falso.
+ */
+bool   HttpRequestBuilder::isHttpResponseOK(string rHttpResponse)
+{
+	string delimiter = HTTP_NEW_LINE;
+	int pos_sub_string = rHttpResponse.find(delimiter);	//Busca la primera posicion de el caracter nueva linea en el string
+	if(pos_sub_string == -1)							//Verifica si la posicion del caracter buscado es -1
+	{
+		return false;			//Retorna falso porque la posicion del caracter buscado es -1
+	}
+	string elemento = rHttpResponse.substr(0,pos_sub_string);		//Crea un substring desde el inicio hasta la posicion del caracter de nueva linea
+	if(elemento.compare(HTTP_RESPONSE_OK) == 0)						//Compara el substring con el Header HTTP de OK para determinar si son iguales
+	{
+		return true;			//Retorna un valor de verdad
+	}
+	return false;
+}
+
+/*
  * @name convertIntToString
  * @param
  * - rValue : int (valor entero que se desea convertir a string)

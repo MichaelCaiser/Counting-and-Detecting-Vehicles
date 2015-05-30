@@ -43,4 +43,7 @@ const string HTTP_CONTENT_LENGTH = "Content-Length: ";
 //Http Charset
 const string HTTP_CHARSET_UTF = "charset=utf-8";
 
+//HTTP RESPONSE HEADER
+const string HTTP_RESPONSE_OK = "HTTP/1.1 200 OK";
+
 #endif /* CONSTANTESHTTP_HPP_ */
