@@ -7,8 +7,7 @@
  */
 
 //Libraries
-#include "TokenBuilder.hpp"	//Class definition
-
+#include "TokenBuilder.hpp"			//Class definition
 #include "SecurityConstants.hpp"	//Header file with constants
 
 namespace Security {
@@ -26,7 +25,7 @@ TokenBuilder::~TokenBuilder(){}
 
 /*
  *********************************************************************************
- *                           			SETTERS                                  *
+ *                           		SETTERS                                      *
  *********************************************************************************
  */
 
@@ -37,7 +36,7 @@ void TokenBuilder::setEncryptionKey(string rStringKey)
 
 /*
  *********************************************************************************
- *                           			METHODS                                  *
+ *                           		METHODS                                      *
  *********************************************************************************
  */
 
