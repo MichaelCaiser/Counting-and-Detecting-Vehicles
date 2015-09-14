@@ -63,14 +63,14 @@ string TokenBuilder::createToken()
  */
 string TokenBuilder::encryptString(string rString)
 {
-	for(int counter = 0; counter < rString.size();counter++)
+	for(unsigned int counter = 0; counter < rString.size();counter++)
 	{
 		char string_character = rString.at(counter);
-		char key_character    = mEncryptionKey.at(mEncryptionKey.size()%counter);
+		char key_character    = mEncryptionKey.at(counter%mEncryptionKey.size());
 		//apply a xor between character of the string and character of the key
 		char encrypted_character = string_character ^ key_character;
-		//insert the encrypted character into the string
-		rString.insert(rString.begin()+counter,encrypted_character);
+		//replace the encrypted character into the string for the current position
+		rString.replace(rString.begin()+counter,rString.begin()+counter+1,1,encrypted_character);
 	}
 	return rString;
 }
@@ -96,7 +96,7 @@ string TokenBuilder::getCurrentDate()
 	strftime (buffer,80,DATE_FORMAT.c_str(),timeinfo);
 
 	string string_date(buffer);
-	delete tm;	//free memory
+	//delete timeinfo;	//free memory
 
 	return string_date;
 }
