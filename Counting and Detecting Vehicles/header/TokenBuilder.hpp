@@ -14,9 +14,11 @@
 #ifndef TOKENBUILDER_HPP_
 #define TOKENBUILDER_HPP_
 
-//Bibliotecas
+//Libraries
 #include <string>	/* Object string */
 #include <time.h>	/* time_t, struct tm, localtime, strftime */
+
+//Specification of objects by namespace
 using std::string;
 
 namespace Security {
@@ -32,6 +34,7 @@ public:
 	void   setEncryptionKey(string rStringKey);
 
 private:
+	//Attributes
 	string mEncryptionKey;	//The key to encrypt token's information
 
 	//Methods
