@@ -14,7 +14,7 @@
 #define SECURITYCONSTANTS_HPP_
 
 //Libraries
-#include <string>	//Object String
+#include <string>	/* Object string defined in the STD */
 
 /**
  * Date format where:
@@ -29,6 +29,6 @@
 static const std::string DATE_FORMAT = "%m-%d-%Y %H:%M:%S";
 
 /* Key to encrypt the information by the XOR algorithm */
-static const std::string TOKEN_KEY   = "xA123kJ%4z#@";
+static const std::string TOKEN_KEY   = "xA123kJ%4z#@rtj(=34x45hTrf{´ñ-{";
 
 #endif /* SECURITYCONSTANTS_HPP_ */

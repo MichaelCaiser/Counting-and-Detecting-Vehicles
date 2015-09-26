@@ -7,14 +7,14 @@
  */
 
 //Libraries
-#include "TokenBuilder.hpp"			//Class definition
-#include "SecurityConstants.hpp"	//Header file with constants
+#include "TokenBuilder.hpp"
+#include "SecurityConstants.hpp"	/* Header file with constants */
 
 namespace Security {
 
 /*
  *********************************************************************************
- *                           Constructor and Destroyer                           *
+ *                           Constructor and Destructor                          *
  *********************************************************************************
  */
 TokenBuilder::TokenBuilder() {
@@ -95,9 +95,10 @@ string TokenBuilder::getCurrentDate()
 	//becomes time struct tm to a string date format
 	strftime (buffer,80,DATE_FORMAT.c_str(),timeinfo);
 
-	string string_date(buffer);
-	//delete timeinfo;	//free memory
+	//free memory
+	delete timeinfo;
 
+	string string_date(buffer);
 	return string_date;
 }
 

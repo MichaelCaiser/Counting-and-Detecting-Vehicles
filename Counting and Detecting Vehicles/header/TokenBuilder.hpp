@@ -21,26 +21,28 @@
 //Specification of objects by namespace
 using std::string;
 
-namespace Security {
+namespace Security
+{
+	class TokenBuilder {
+	public:
+		//Constructor and Destructor
+		TokenBuilder();
+		virtual ~TokenBuilder();
 
-class TokenBuilder {
-public:
-	//Constructor and Destroyer
-	TokenBuilder();
-	virtual ~TokenBuilder();
+		//Setters
+		void   setEncryptionKey(string rStringKey);
 
-	//Methods
-	string createToken();
-	void   setEncryptionKey(string rStringKey);
+		//Methods
+		string createToken();
 
-private:
-	//Attributes
-	string mEncryptionKey;	//The key to encrypt token's information
+	private:
+		//Attributes
+		string mEncryptionKey;	//The key to encrypt token's information
 
-	//Methods
-	string encryptString(string rString);
-	string getCurrentDate();
-};
+		//Methods
+		string encryptString(string rString);
+		string getCurrentDate();
+	};
 
 } /* namespace Security */
 
