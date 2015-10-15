@@ -18,7 +18,7 @@
 #include <string>	/* Object string */
 #include <time.h>	/* time_t, struct tm, localtime, strftime */
 
-//Specification of objects by namespace
+//Specification of classes by namespace
 using std::string;
 
 namespace Security
