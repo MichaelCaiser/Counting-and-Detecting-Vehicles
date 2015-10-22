@@ -41,7 +41,7 @@ namespace Model
 		time_t getFinalDate() const;
 		string getSecurityToken() const;
 		WeatherCondition getWeatherCondition() const;
-		vector<VehicleRecord*> getRecords();
+		vector<VehicleRecord*> getRecords() const;
 
 		//Setters
 		void setDeviceCode(string rCode);

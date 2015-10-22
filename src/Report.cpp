@@ -53,7 +53,7 @@ WeatherCondition Report::getWeatherCondition() const{
 	return mWeather;
 }
 
-vector<VehicleRecord*> Report::getRecords() {
+vector<VehicleRecord*> Report::getRecords() const{
 	return mRecords;
 }
 
