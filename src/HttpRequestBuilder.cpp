@@ -16,7 +16,7 @@
 //Specification by namespace
 using std::ostringstream;
 
-namespace WebService {
+namespace HTTP {
 
 
 /*

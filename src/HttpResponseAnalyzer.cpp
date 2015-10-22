@@ -11,7 +11,7 @@
 //Libraries
 #include "HttpConstants.hpp"	/* Header file with constants */
 
-namespace WebService {
+namespace HTTP {
 
 
 /*

@@ -19,7 +19,7 @@
 //Specification by namespace
 using std::string;
 
-namespace WebService
+namespace HTTP
 {
 	class HttpRequestBuilder {
 	public:
@@ -35,6 +35,6 @@ namespace WebService
 		string convertToString(int rInt);
 	};
 
-} /* namespace WebService */
+} /* namespace HTTP */
 
 #endif /* HTTPREQUESTBUILDER_HPP_ */

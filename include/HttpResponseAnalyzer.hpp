@@ -19,7 +19,7 @@
 //Specification by namespace
 using std::string;
 
-namespace WebService
+namespace HTTP
 {
 	class HttpResponseAnalyzer {
 	public:
