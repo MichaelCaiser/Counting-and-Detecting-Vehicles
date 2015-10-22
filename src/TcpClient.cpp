@@ -68,7 +68,7 @@ bool TcpClient::connect(const string &rHost, const int &rPort){
 bool TcpClient::send(const string &rMessage){
 	int status = ::send(mSockfd, rMessage.c_str(), rMessage.size(), MSG_NOSIGNAL );
 	if(status == -1){
-		cerr << "" << endl;
+		cerr << "Error: couldn't send the message to the host" << endl;
 		return false;
 	}
 	return true;
